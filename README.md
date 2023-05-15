@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+Components
+This code represents a React.js web application that retrieves word frequency data from a text file hosted on https://www.terriblytinytales.com and displays the top 20 most frequently occurring words in a bar chart using the Recharts library. The application also allows the user to export the data to a CSV file.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The application consists of three main components:
 
-## Available Scripts
+App: This is the main component that renders the navbar, content container, and footer. It also contains the state for wordCounts and loading, as well as functions for handling form submission, exporting the data, and resetting the state.
 
-In the project directory, you can run:
+BarChart: This is a Recharts component that renders the histogram chart based on the data passed to it.
 
-### `npm start`
+Cell: This is a Recharts component that defines the color for each bar in the histogram chart.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Libraries and Plugins Used
+The following libraries and plugins were used in the development of this project:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React.js: A JavaScript library for building user interfaces.
+axios: A promise-based HTTP client for making API requests.
+file-saver: A library for saving files on the client-side.
+Recharts: A composable charting library built on top of D3.js.
+Hosting
+This application can be hosted on Heroku/Netlify or any other hosting platform that supports React.js applications. To host this application, follow these steps:
 
-### `npm test`
+Build the React app by running the following command:
+npm run build
+Create a new file called server.js in the root directory of the project and add the following code:
+const express = require('express');
+const path = require('path');
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const app = express();
+const port = process.env.PORT || 3000;
 
-### `npm run build`
+app.use(express.static(path.join(__dirname, 'build')));
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+app.listen(port, function () {
+  console.log(`Listening on port ${port}`);
+});
+Install the express package by running the following command:
+npm install express --save
+Deploy your app to Heroku/Netlify or any other hosting platform that supports Node.js applications.
+Future Scope
+In the future, this application can be enhanced to include additional features such as:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+A search bar for searching for specific words in the text file.
+The ability to upload a custom text file for analysis.
+Additional chart types and customization options.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
