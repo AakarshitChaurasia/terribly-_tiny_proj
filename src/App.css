@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* App.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+  height: 60px;
+  padding: 0 20px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 20px;
+  margin-left: 10px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  margin-right: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.4;
+}
+
+.header-container {
+  background-color: #5CDB95;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+.header-title {
+  font-size: 2rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.content-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.graph-container {
+  margin-bottom: 1rem;
+  width: 100%;
+  height: 600px; /* Adjust chart height as per your requirement */
+  overflow-x: scroll;
+}
+
+.graph-container h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.submit-button {
+  background-color: #379683;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.export-button {
+  background-color: #5CDB95;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.export-button:hover {
+  background-color: #379683;
+}
+
+.footer-container {
+  background-color: #5CDB95;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+.footer-container p {
+  font-size: 1rem;
+  color: white;
+}
+
+.recharts-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.recharts-surface {
+  cursor: pointer;
+}
+
+.recharts-cartesian-axis-tick-line {
+  display: none;
+}
+
+.recharts-cartesian-axis-tick-value {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.recharts-legend {
+  margin-top: 1rem;
+}
+
+.recharts-legend-item {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.recharts-legend-item:hover {
+  opacity: 0.5;
+}
+
+.recharts-bar-labels {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-anchor: middle;
+}
+
+@media screen and (max-width: 576px) {
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .footer-container p {
+    font-size: 0.8rem;
+  }
+  
+  .graph-container {
+    height: 500px; /* Adjust chart height as per your requirement */
+    overflow-x: scroll;
+  }
+  
+  .recharts-cartesian-axis-tick-value,
+  .recharts-bar-labels {
+    font-size: 1rem;
+  }
+}
