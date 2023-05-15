@@ -74,7 +74,7 @@ function App() {
         </div>
         <ul className="nav-links">
           <li className="nav-link" onClick={handleHome}>Home</li>
-          <li className="nav-link"><a href="https://github.com/AakarshitChaurasia/reactjs_terribly_comp/blob/main/README.md">About Us</a></li>
+          <li className="nav-link"><a href="https://github.com/AakarshitChaurasia/terribly-_tiny_proj/blob/main/README.md">About Us</a></li>
         </ul>
       </nav>
 
